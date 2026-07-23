@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <!-- Fondo Oscuro -->
+  <rect width="1200" height="630" fill="#13140F"/>
+  
+  <!-- Sombra / Resplandor Rojo (Ember & Maroon) -->
+  <circle cx="1000" cy="150" r="350" fill="#7C1F2E" opacity="0.4" filter="blur(60px)"/>
+  <circle cx="1100" cy="500" r="250" fill="#E8142B" opacity="0.25" filter="blur(50px)"/>
+
+  <!-- Punto Decorativo Neón -->
+  <circle cx="100" cy="120" r="10" fill="#E8142B"/>
+  
+  <!-- Texto Superior / Eyebrow -->
+  <text x="125" y="128" font-family="'Space Mono', monospace, sans-serif" font-size="22" font-weight="bold" fill="#E7C9A8" letter-spacing="4">
+    IMPRESIÓN DE GRAN FORMATO · TEXCOCO
+  </text>
+
+  <!-- Título Principal -->
+  <text x="100" y="240" font-family="'Anton', sans-serif, impact" font-size="90" fill="#F3EFE6" letter-spacing="2">
+    ANACONDA MKT LAB
+  </text>
+
+  <!-- Subtítulo / Servicios -->
+  <text x="100" y="330" font-family="'Anton', sans-serif, impact" font-size="65" fill="#E8142B">
+    VINIL · LONA · RÓTULOS
+  </text>
+
+  <!-- Descripción -->
+  <text x="100" y="420" font-family="'Work Sans', sans-serif" font-size="28" fill="#CFC9B8">
+    Diseño personalizado, alta calidad y entrega rápida.
+  </text>
+  <text x="100" y="460" font-family="'Work Sans', sans-serif" font-size="28" fill="#CFC9B8">
+    Le damos cara a tu negocio.
+  </text>
+
+  <!-- Barra Inferior de Contacto -->
+  <rect x="0" y="550" width="1200" height="80" fill="#4A1119"/>
+  <text x="100" y="600" font-family="'Space Mono', monospace, sans-serif" font-size="24" fill="#F3EFE6" font-weight="bold">
+    COTIZA POR WHATSAPP: 55 3978 7716 / 55 2823 6389
+  </text>
+</svg>
