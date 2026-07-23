@@ -6,6 +6,7 @@
   --maroon: #7c1f2e;
   --maroon-dark: #4a1119;
   --ember: #e8142b;
+  --whatsapp-green: #25d366;
   --scale: #33362e;
   --line: rgba(19, 20, 15, 0.14);
   --line-dark: rgba(243, 239, 230, 0.14);
@@ -198,15 +199,11 @@ nav.links a:hover {
   background: var(--ink);
   color: var(--paper);
 }
-.btn svg {
-  width: 16px;
-  height: 16px;
+.btn svg.icon {
+  width: 18px;
+  height: 18px;
   flex-shrink: 0;
-}
-@media (max-width: 860px) {
-  nav.links {
-    display: none;
-  }
+  fill: currentColor;
 }
 
 /* ---------- HERO ---------- */
@@ -252,7 +249,7 @@ nav.links a:hover {
   color: var(--paper);
 }
 .hero h1 .maroon {
-  color: #d4586a;
+  color: #ff0026;
 }
 .hero h1 .outline {
   -webkit-text-stroke: 1.5px var(--paper);
@@ -308,56 +305,6 @@ nav.links a:hover {
   width: 78%;
   height: 78%;
 }
-.snake-sway {
-  transform-origin: 200px 260px;
-  animation: sway 4.2s ease-in-out infinite;
-}
-@keyframes sway {
-  0%,
-  100% {
-    transform: rotate(-2.2deg) scale(1);
-  }
-  50% {
-    transform: rotate(2.2deg) scale(1.008);
-  }
-}
-.snake-body,
-.snake-head {
-  filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.55));
-}
-.tongue {
-  stroke: var(--ember);
-  stroke-width: 1.6;
-  stroke-linecap: round;
-  opacity: 0.9;
-}
-.eye-glow {
-  opacity: 0.55;
-  animation: eyeglow 2.6s ease-in-out infinite;
-}
-@keyframes eyeglow {
-  0%,
-  100% {
-    opacity: 0.45;
-  }
-  50% {
-    opacity: 0.85;
-  }
-}
-.eye-group {
-  transform-origin: 258.7px 367.6px;
-  animation: eyeblink 6s ease-in-out infinite;
-}
-@keyframes eyeblink {
-  0%,
-  92%,
-  100% {
-    transform: scaleY(1);
-  }
-  95% {
-    transform: scaleY(0.1);
-  }
-}
 .eye-caption {
   position: absolute;
   bottom: 16px;
@@ -371,7 +318,7 @@ nav.links a:hover {
   color: #8a8470;
 }
 
-/* ---------- SCALE DIVIDER (signature motif) ---------- */
+/* ---------- SCALE DIVIDER ---------- */
 .scale-divider {
   height: 34px;
   width: 100%;
@@ -389,9 +336,6 @@ nav.links a:hover {
 }
 .scale-divider.flip {
   transform: rotate(180deg);
-}
-.scale-divider.to-paper {
-  background-color: var(--paper);
 }
 
 /* ---------- SECTION GENERIC ---------- */
@@ -462,9 +406,6 @@ section {
   background: var(--ink);
   color: var(--paper);
 }
-.why .section-head p {
-  color: #b9b3a0;
-}
 .why-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -484,7 +425,6 @@ section {
   font-weight: 700;
   text-transform: none;
   font-size: 18px;
-  letter-spacing: 0;
   margin-bottom: 8px;
 }
 .why-item p {
@@ -500,7 +440,6 @@ section {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 32px;
-  counter-reset: step;
 }
 @media (max-width: 860px) {
   .steps {
@@ -525,7 +464,6 @@ section {
   font-weight: 700;
   text-transform: none;
   font-size: 18px;
-  letter-spacing: 0;
   margin-bottom: 8px;
 }
 .step p {
@@ -548,7 +486,7 @@ section {
   }
 }
 .gal-tile {
-  aspect-ratio: 4/5;
+  aspect-ratio: 16/9;
   border-radius: 4px;
   position: relative;
   overflow: hidden;
@@ -574,10 +512,8 @@ section {
   object-fit: cover;
   z-index: 0;
 }
-.gal-tile::before {
-  content: "";
-  position: absolute;
-  inset: 0;
+.gal-zoom {
+  cursor: zoom-in;
 }
 .gal-tile::after {
   content: "";
@@ -588,36 +524,6 @@ section {
     180deg,
     transparent 40%,
     rgba(0, 0, 0, 0.65) 100%
-  );
-}
-.g1::before {
-  background: repeating-linear-gradient(
-    115deg,
-    #7c1f2e,
-    #7c1f2e 18px,
-    #6a1a27 18px,
-    #6a1a27 36px
-  );
-}
-.g2::before {
-  background: repeating-linear-gradient(
-    45deg,
-    #22241d,
-    #22241d 14px,
-    #2c2f25 14px,
-    #2c2f25 28px
-  );
-}
-.g3::before {
-  background: linear-gradient(160deg, #1a1c15, #33362e 60%, #1a1c15);
-}
-.g4::before {
-  background: repeating-linear-gradient(
-    90deg,
-    #e8142b,
-    #e8142b 4px,
-    #4a1119 4px,
-    #4a1119 40px
   );
 }
 
@@ -636,9 +542,6 @@ section {
     grid-template-columns: 1fr;
     gap: 40px;
   }
-}
-.contacto .section-head p {
-  color: #b9b3a0;
 }
 .whats-row {
   display: flex;
@@ -661,8 +564,8 @@ section {
     background 0.2s;
 }
 .whats-card:hover {
-  border-color: #3fbf5f;
-  background: rgba(63, 191, 95, 0.06);
+  border-color: var(--whatsapp-green);
+  background: rgba(37, 211, 102, 0.08);
 }
 .whats-card .left {
   display: flex;
@@ -680,9 +583,10 @@ section {
   letter-spacing: 0.08em;
 }
 .whats-icon {
-  width: 22px;
-  height: 22px;
+  width: 24px;
+  height: 24px;
   flex-shrink: 0;
+  fill: var(--whatsapp-green);
 }
 
 .info-block {
@@ -705,10 +609,6 @@ section {
   margin-top: 2px;
   color: var(--ember);
 }
-.info-block .editme {
-  color: #8a8470;
-  font-style: italic;
-}
 
 form.cotiza {
   display: flex;
@@ -724,6 +624,16 @@ form.cotiza {
   color: #8a8470;
   margin-bottom: 7px;
 }
+.label-with-counter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.char-count {
+  font-family: "Space Mono", monospace;
+  font-size: 11px;
+  color: #8a8470;
+}
 .field input,
 .field select,
 .field textarea {
@@ -738,14 +648,18 @@ form.cotiza {
   outline: none;
   transition: border-color 0.2s;
 }
+
+/* Control para el campo textarea expandible con límites */
+.field textarea {
+  resize: vertical;
+  min-height: 100px;
+  max-height: 220px; /* Límite máximo para evitar deformar la UI */
+}
+
 .field input:focus,
 .field select:focus,
 .field textarea:focus {
   border-color: var(--ember);
-}
-.field textarea {
-  resize: vertical;
-  min-height: 90px;
 }
 .field-row {
   display: grid;
@@ -767,6 +681,15 @@ form.cotiza .btn {
   font-size: 12.5px;
   color: #8a8470;
   margin-top: 2px;
+}
+.form-error {
+  background: rgba(232, 20, 43, 0.15);
+  border: 1px solid var(--ember);
+  color: #ff808b;
+  padding: 10px 14px;
+  font-size: 13px;
+  border-radius: 3px;
+  font-family: "Space Mono", monospace;
 }
 
 /* ---------- FOOTER ---------- */
@@ -823,7 +746,7 @@ footer {
   width: 58px;
   height: 58px;
   border-radius: 50%;
-  background: #25d366;
+  background: var(--whatsapp-green);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -832,32 +755,17 @@ footer {
   transition: transform 0.2s ease;
 }
 .float-whats:hover {
-  transform: scale(1.07);
+  transform: scale(1.08);
 }
 .float-whats svg {
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
+  fill: #fff;
 }
 
 ::selection {
   background: var(--ember);
   color: #fff;
-}
-
-/* ---------- MEJORAS Y ADICIONES --------- */
-.btn svg.icon,
-.whats-icon {
-  width: 16px;
-  height: 16px;
-  flex-shrink: 0;
-}
-.whats-icon {
-  width: 22px;
-  height: 22px;
-}
-.float-whats svg {
-  width: 28px;
-  height: 28px;
 }
 
 /* Menú móvil */
@@ -893,4 +801,36 @@ footer {
   nav.links.active {
     display: flex;
   }
+}
+
+/* Lightbox Modal */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: rgba(20, 12, 12, 0.92);
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+.lightbox.active {
+  display: flex;
+}
+.lightbox img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 4px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  background: none;
+  border: none;
+  color: var(--paper);
+  font-size: 40px;
+  line-height: 1;
+  cursor: pointer;
 }
